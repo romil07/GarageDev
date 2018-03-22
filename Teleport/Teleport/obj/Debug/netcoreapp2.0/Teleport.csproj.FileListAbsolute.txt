@@ -1,0 +1,11 @@
+C:\code\github\GarageDev\Teleport\Teleport\obj\Debug\netcoreapp2.0\Teleport.csprojResolveAssemblyReference.cache
+C:\code\github\GarageDev\Teleport\Teleport\obj\Debug\netcoreapp2.0\Teleport.csproj.CoreCompileInputs.cache
+C:\code\github\GarageDev\Teleport\Teleport\bin\Debug\netcoreapp2.0\Teleport.deps.json
+C:\code\github\GarageDev\Teleport\Teleport\bin\Debug\netcoreapp2.0\Teleport.runtimeconfig.json
+C:\code\github\GarageDev\Teleport\Teleport\bin\Debug\netcoreapp2.0\Teleport.runtimeconfig.dev.json
+C:\code\github\GarageDev\Teleport\Teleport\bin\Debug\netcoreapp2.0\Teleport.dll
+C:\code\github\GarageDev\Teleport\Teleport\bin\Debug\netcoreapp2.0\Teleport.pdb
+C:\code\github\GarageDev\Teleport\Teleport\obj\Debug\netcoreapp2.0\Teleport.AssemblyInfoInputs.cache
+C:\code\github\GarageDev\Teleport\Teleport\obj\Debug\netcoreapp2.0\Teleport.AssemblyInfo.cs
+C:\code\github\GarageDev\Teleport\Teleport\obj\Debug\netcoreapp2.0\Teleport.dll
+C:\code\github\GarageDev\Teleport\Teleport\obj\Debug\netcoreapp2.0\Teleport.pdb
