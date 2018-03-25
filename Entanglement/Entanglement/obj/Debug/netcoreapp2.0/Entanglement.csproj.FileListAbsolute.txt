@@ -9,3 +9,14 @@ C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0
 C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.AssemblyInfo.cs
 C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.dll
 C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.pdb
+C:\code\github\GarageDev\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.csprojResolveAssemblyReference.cache
+C:\code\github\GarageDev\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.csproj.CoreCompileInputs.cache
+C:\code\github\GarageDev\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.AssemblyInfoInputs.cache
+C:\code\github\GarageDev\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.AssemblyInfo.cs
+C:\code\github\GarageDev\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.dll
+C:\code\github\GarageDev\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.pdb
+C:\code\github\GarageDev\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.deps.json
+C:\code\github\GarageDev\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.runtimeconfig.json
+C:\code\github\GarageDev\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.runtimeconfig.dev.json
+C:\code\github\GarageDev\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.dll
+C:\code\github\GarageDev\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.pdb

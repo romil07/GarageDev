@@ -4,11 +4,11 @@ using Microsoft.Quantum.Primitive;
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.MetaData.Attributes;
 
-[assembly: OperationDeclaration("Quantum.Entanglement", "MeasureEntanglement () : Bool", new string[] { }, "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs", 165L, 8L, 5L)]
+[assembly: OperationDeclaration("Quantum.Entanglement", "MeasureEntanglement () : (Int, Int)", new string[] { }, "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs", 169L, 8L, 5L)]
 #line hidden
 namespace Quantum.Entanglement
 {
-    public class MeasureEntanglement : Operation<QVoid, Boolean>
+    public class MeasureEntanglement : Operation<QVoid, (Int64,Int64)>
     {
         public MeasureEntanglement(IOperationFactory m) : base(m)
         {
@@ -68,37 +68,54 @@ namespace Quantum.Entanglement
             }
         }
 
-        public override Func<QVoid, Boolean> Body
+        public override Func<QVoid, (Int64,Int64)> Body
         {
             get => (_args) =>
             {
 #line hidden
                 this.Factory.StartOperation("Quantum.Entanglement.MeasureEntanglement", OperationFunctor.Body, _args);
-                var __result__ = default(Boolean);
+                var __result__ = default((Int64,Int64));
                 try
                 {
-#line 11 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
-                    var stateFinal = 2L;
-#line 12 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
-                    var r = false;
-#line 13 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
+#line 11 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                    var countSame = 0L;
+#line 12 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                    var countDiff = 0L;
+#line 13 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                    var count = 1000L;
+#line 14 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
                     var qubits = Allocate.Apply(2L);
-                    // Apply hadamard on qbit1
-#line 16 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
-                    MicrosoftQuantumPrimitiveH.Apply(qubits[0L]);
-                    // Apply CNOT to entanlge both qbits
-#line 18 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
-                    MicrosoftQuantumPrimitiveCNOT.Apply((qubits[0L], qubits[1L]));
-                    // Measure and compare states
-#line 20 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
-                    r = (M.Apply<Result>(qubits[0L]) == M.Apply<Result>(qubits[1L]));
-#line 21 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
-                    ResetAll.Apply(qubits);
+#line 16 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                    foreach (var i in new Range(1L, count))
+                    {
+                        // Apply hadamard on qubit1
+#line 19 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                        MicrosoftQuantumPrimitiveH.Apply(qubits[0L]);
+                        // Apply CNOT to entangle both qubits
+#line 22 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                        MicrosoftQuantumPrimitiveCNOT.Apply((qubits[0L], qubits[1L]));
+                        // Measure and compare states
+#line 25 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                        if ((M.Apply<Result>(qubits[0L]) == M.Apply<Result>(qubits[1L])))
+                        {
+#line 27 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                            countSame = (countSame + 1L);
+                        }
+                        else
+                        {
+#line 31 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                            countDiff = (countDiff + 1L);
+                        }
+
+#line 34 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
+                        ResetAll.Apply(qubits);
+                    }
+
 #line hidden
                     Release.Apply(qubits);
 #line hidden
-                    __result__ = r;
-#line 24 "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Operation.qs"
+                    __result__ = (countSame, countDiff);
+#line 38 "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Operation.qs"
                     return __result__;
                 }
                 finally
@@ -111,9 +128,9 @@ namespace Quantum.Entanglement
             ;
         }
 
-        public static System.Threading.Tasks.Task<Boolean> Run(IOperationFactory __m__)
+        public static System.Threading.Tasks.Task<(Int64,Int64)> Run(IOperationFactory __m__)
         {
-            return __m__.Run<MeasureEntanglement, QVoid, Boolean>(QVoid.Instance);
+            return __m__.Run<MeasureEntanglement, QVoid, (Int64,Int64)>(QVoid.Instance);
         }
     }
 }

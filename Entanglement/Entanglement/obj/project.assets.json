@@ -788,24 +788,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pranpati\\.nuget\\packages\\": {},
+    "C:\\Users\\rogoyal\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Entanglement.csproj",
+      "projectUniqueName": "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Entanglement.csproj",
       "projectName": "Entanglement",
-      "projectPath": "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\Entanglement.csproj",
-      "packagesPath": "C:\\Users\\pranpati\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pranpati\\Source\\Repos\\Entanglement\\Entanglement\\obj\\",
+      "projectPath": "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\Entanglement.csproj",
+      "packagesPath": "C:\\Users\\rogoyal\\.nuget\\packages\\",
+      "outputPath": "C:\\code\\github\\GarageDev\\Entanglement\\Entanglement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pranpati\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\rogoyal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
