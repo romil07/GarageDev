@@ -1,0 +1,11 @@
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.deps.json
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.runtimeconfig.json
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.runtimeconfig.dev.json
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.dll
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\bin\Debug\netcoreapp2.0\Entanglement.pdb
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.csprojResolveAssemblyReference.cache
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.csproj.CoreCompileInputs.cache
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.AssemblyInfoInputs.cache
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.AssemblyInfo.cs
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.dll
+C:\Users\pranpati\Source\Repos\Entanglement\Entanglement\obj\Debug\netcoreapp2.0\Entanglement.pdb
