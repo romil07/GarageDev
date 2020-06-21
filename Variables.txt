@@ -1,0 +1,278 @@
+Devfabric deploy:
+
+vssdf sps gallery ems tfs rmo aex commerce sh blobstore artifact
+vssdf sps.l2 gallery.l2 ems.l2 tfs.l2 rmo.l2 aex.l2 commerce.l2
+
+sps1.vssps.vsts.me
+
+http://rmcdpjenkins3.southindia.cloudapp.azure.com:8080
+admin
+GameNight19!
+
+devops/rogoyal
+gymhllp36beakczv6eowhg6ame5jwbp2abttxtgt23472px5lsva
+
+devops/romilg
+k6t53r372ruyzvmpyr73mnlmbpojqq3kndyqi3anu4nenel4vdqa
+
+Mseng PAT - 
+wx44du5czhjyhgxo7n4fwqnaycko5hredh2xqhe7g2bbyvz3sznq
+
+Bugbash pod Pat 
+l7ivpc623ukvkkmvqvj4got6dfenmuv4lxyuacj54dspsq72jbda
+
+Local PAT - 
+rpswtpncyb6cgfg7cfk6wduuzp6onx3j6r2wk3223oxwz3kmwf2q
+
+HelloRMPPE  PAT
+3w7dfk65rvl7djnjyu2puf77tv2bmhlkcswpl45ptgi6zd7s7mjq
+
+TFS2018RC2 PAT
+45x4dz35x32oszpzm4x6dsgzgp53vdzz6hr3c7wm5stmgry37twq
+
+Bugbash pod pat
+ck653yezxd55dgm2ix7soe4ntdo4nvnygv5f2zepw7tgns3veqmq
+
+Github
+e58137aeb5a2ec0742e3fd768622acabf230ef63 - ajinkya
+6ac3830dc2e33d6beea06d86243af9644fcffd1a - romil
+fa939d673aa573b20490bc49c04f873cdf1081ad- full scope
+
+BuildCanary
+np5htjsjaoqwkfxmb4e6b6sityjhygbvewy7mgew5sdivzbozkga
+
+Onprem
+pwaz76dkq26zksz5f2mhhrcb5bcz3m3u2sl4wsggqjbvrpqioxjq
+
+Devfabric
+rparx2yognxg4itbz4zefetspc6l4drkzzbc4e45eagsnfs4wt5a
+
+TestKing123
+6p5jfcqxzphgao6n2l4htqygh2cbwkgrcf7ick5nwdni36uumgga
+
+tfspf-rmpf
+6tz2grvs7r473ybkpj6x7idvjnnp4riut4z6y7sa5433gb2jibhq
+
+tfssu1-rmsu0
+rv2fybkvajfxwer3eaawdqyinlgt4mlouyg2tsvvuvtyfma64p4q
+
+rmcdp-prodtests
+rexfcjcrm3yz54tx4wgt6wc6g3wy7gpedngqatfdwjfk32ptmspq
+q5b4cjf77a4bxmwg6pszuviofonvobwgzirgkjug6fgfneefhgaq
+
+GHE token
+5aff125349d443ee8f9ef8f8a4342db634fc7bd6
+
+Gitlab
+xeWig19aExFU4CitsS9-
+
+tfsconfig publishextension /VsixFilePath:C:\VSO2\bin\Debug.AnyCPU\ServiceEndpoints.Service\Microsoft.TeamFoundation.Extension.Azure.vsix
+
+For Dev-Fabric Update:
+Update-Extension -PublisherName ms -ExtensionName github-endpoint-type -VsixFilePath C:\VSO2\bin\Debug.AnyCPU\ServiceEndpoints.Service\Microsoft.TeamFoundation.Extension.Endpoint.vsix
+
+Run from Tfs LR prompt in Tfs\DevFabric
+Install-LocalExtension -SupportedHosts ProjectCollection -VsixFilePath C:\VSO2\bin\Debug.AnyCPU\ServiceEndpoints.Service\Microsoft.TeamFoundation.Extension.Endpoint.vsix
+Install-LocalExtension -SupportedHosts ProjectCollection -VsixFilePath C:\VSO2\bin\Debug.AnyCPU\ServiceEndpoints.Service\Microsoft.TeamFoundation.Extension.Azure.vsix
+Install-LocalExtension -SupportedHosts ProjectCollection -VsixFilePath C:\VSO2\bin\Debug.AnyCPU\ServiceEndpoints.Service\Microsoft.Azure.DevOps.Extension.PipelineArtifacts.vsix
+
+node make.js build --task DownloadBuildArtifactsV0
+node make.js build --task DownloadGitHubReleaseV0
+node make.js build --task GitHubReleaseV0
+node make.js build --task VsTestV2
+
+node make.js build --task DownloadGitHubReleaseV0 && tfx build tasks upload --task-path C:\code\romil\MS\azure-pipelines-tasks\_build\Tasks\DownloadGitHubReleaseV0
+node make.js build --task DownloadGitHubNugetPackageV1 && tfx build tasks upload --task-path C:\code\romil\MS\azure-pipelines-tasks\_build\Tasks\DownloadGitHubNugetPackageV1
+node make.js build --task DownloadGitHubNpmPackageV1 && tfx build tasks upload --task-path C:\code\romil\MS\azure-pipelines-tasks\_build\Tasks\DownloadGitHubNpmPackageV1
+MININT-DVPL4LG
+
+tfx extension create --manifest-globs extension-manifest.json
+
+l2 -onprem /tests:AgentBasedPipelineShouldBeAbleToSuccessfullyReleaseWithExternalTfsArtifact
+l1 /tests:AgentBasedPipelineShouldBeAbleToSuccessfullyReleaseWithExternalTfsArtifact
+
+Set feature flag state:
+
+Getting all flags and their states deployment-wide:
+Get-FeatureFlag
+Getting all flags and their states for a single account:
+Get-FeatureFlag -HostId account_guid
+Getting information for one flag deployment-wide:
+Get-FeatureFlag -FeatureName ServiceEndpoints.GenerateInstallationAccessToken
+Getting information for one flag in account:
+Get-FeatureFlag -FeatureName feature_name -HostId account_guid
+Setting a feature flag deployment-wide:
+Set-FeatureFlag -FeatureName ServiceEndpoints.GenerateInstallationAccessToken -State {Off|On|Undefined}
+Setting a feature flag for a single account:
+Set-FeatureFlag -FeatureName ServiceEndpoints.GenerateInstallationAccessToken -State {Off|On|Undefined} -HostId account_guid
+
+declare @features dbo.typ_KeyValuePairStringTableNullable
+insert into @features values('#\FeatureAvailability\Entries\ServiceEndpoints.GenerateInstallationAccessToken\AvailabilityState\', '1')
+exec prc_UpdateRegistry @partitionId=1, @identityName = '00000000-0000-0000-0000-000000000000', @registryUpdates = @features
+
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+select * from tbl_RegistryItems where PartitionId > 0 and ParentPath like '%GenerateInstallationAccessToken%' and ChildItem like '%AvailabilityState%'
+
+DistributedTask.PickListSearchEnabled
+WebAccess.ReleaseManagement.SearchBuildDefinitionsOnServer
+AzureDevOps.ReleaseManagement.EnablePaginationForGitHubRepositories
+AzureDevOps.ReleaseManagement.EnableGitHubDataSourcesForGitHubArtifact
+ServiceEndpoints.EnableMlWorkspaceAsScope
+WebAccess.ReleaseManagement.EnableGitHubRepositoryPicker
+ServiceEndpoints.GenerateInstallationAccessToken
+ServiceEndpoints.EnableAzurePipelinesMarketplaceAppId
+DistributedTask.YamlDownloadBuildStepDistributedTask.EnablePipelineTriggers
+DistributedTask.EnablePackageResourceTriggers
+DistributedTask.EnableWebHookResourceTriggers
+
+
+Get-TestCredential -VaultName rmtest -SecretName msft3outlook
+msft3@outlook.com - AzureDev0psP!peline
+billtestuser@billtest287516live.ccsctp.net - GameNight!19
+"https://api-dogfood.resources.windows-int.net/"
+
+https://df.onecloud.azure-test.net
+
+b24988ac-6180-42a0-ab88-20f7382dd24c
+
+
+# Write your powershell commands here.
+
+Write-Host "##vso[artifact.associate artifacttype=Jenkins;artifactname=Some Jenkins Artifact;definition=rogoyal;version=7;itempattern=**;connection=29474d98-9f26-4e48-8441-150d3e3d365e]Jenkins Artifact Metadata"
+
+# Use the environment variables input below to pass secret variables to this script.
+
+vault key: 8560a05d9dc9471696769856f8da2262
+service tree id: 36762434-b912-469b-a84b-8eefde758be1
+
+var subscriptionsJson = "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/439f6f90-fc63-4d40-8a25-33cdf46c730c\",\r\n      \"subscriptionId\": \"439f6f90-fc63-4d40-8a25-33cdf46c730c\",\r\n      \"displayName\": \"Visual Studio Enterprise\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"PublicAndIndia_2015-09-01\",\r\n        \"quotaId\": \"MSDN_2014-09-01\",\r\n        \"spendingLimit\": \"On\"\r\n      },\r\n      \"authorizationSource\": \"Legacy\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/393a91ee-f98d-43ff-b964-009bda0fdf2e\",\r\n      \"subscriptionId\": \"393a91ee-f98d-43ff-b964-009bda0fdf2e\",\r\n      \"displayName\": \"RMINT\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"Legacy, RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682\",\r\n      \"subscriptionId\": \"c00d16c7-6c1f-4c03-9be1-6934a4c49682\",\r\n      \"displayName\": \"RMDev\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"Legacy, RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/dae41bd3-9db4-4b9b-943e-832b57cac828\",\r\n      \"subscriptionId\": \"dae41bd3-9db4-4b9b-943e-832b57cac828\",\r\n      \"displayName\": \"Cosmos_WDG_Core_BnB_100348\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/db67ee91-0665-44d4-b451-31faee93c5fd\",\r\n      \"subscriptionId\": \"db67ee91-0665-44d4-b451-31faee93c5fd\",\r\n      \"displayName\": \"Kubernetes Shared Tools - PROD\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/4af47a31-44e3-4036-87ba-36d6a7300108\",\r\n      \"subscriptionId\": \"4af47a31-44e3-4036-87ba-36d6a7300108\",\r\n      \"displayName\": \"TM-PROD-EUS2-1\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/79877a38-051a-4df9-a8d3-c207af0ecc25\",\r\n      \"subscriptionId\": \"79877a38-051a-4df9-a8d3-c207af0ecc25\",\r\n      \"displayName\": \"VSO-AppInsightsTelemetry-PROD-2\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b53a78a1-b0a3-4cf0-bf22-44aecb727c8e\",\r\n      \"subscriptionId\": \"b53a78a1-b0a3-4cf0-bf22-44aecb727c8e\",\r\n      \"displayName\": \"VSO-AppInsightsTelemetry-PPE\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/cd83bfda-eca3-40b8-b558-5640dbcf7544\",\r\n      \"subscriptionId\": \"cd83bfda-eca3-40b8-b558-5640dbcf7544\",\r\n      \"displayName\": \"VSO-AppInsightsTelemetry-PROD\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/a06d3ef1-30bd-4816-be3c-113477c272f1\",\r\n      \"subscriptionId\": \"a06d3ef1-30bd-4816-be3c-113477c272f1\",\r\n      \"displayName\": \"AI_MultiTenantIngestion_KCM_All_Prod_00\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/97c855b7-1ec7-4721-9a11-ed273c6b0ccb\",\r\n      \"subscriptionId\": \"97c855b7-1ec7-4721-9a11-ed273c6b0ccb\",\r\n      \"displayName\": \"S2_Log_Analytics_Backend_OI_KCM_INT\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/5a9a045b-06b2-4c3b-840d-b0f1e15ed8ed\",\r\n      \"subscriptionId\": \"5a9a045b-06b2-4c3b-840d-b0f1e15ed8ed\",\r\n      \"displayName\": \"LA_MultiTenantIngestion_KCM_USEast_Prod_00\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/dfa3735b-dd6f-4cbf-a7ee-9a6e60d10094\",\r\n      \"subscriptionId\": \"dfa3735b-dd6f-4cbf-a7ee-9a6e60d10094\",\r\n      \"displayName\": \"DS-SQL-BASE_RANDOM1_sashwin_R&D_60843\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/eb87f285-893a-4f0f-8c55-7b4f67b1d097\",\r\n      \"subscriptionId\": \"eb87f285-893a-4f0f-8c55-7b4f67b1d097\",\r\n      \"displayName\": \"CAT_Eng\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/52a442a2-31e9-42f9-8e3e-4b27dbf82673\",\r\n      \"subscriptionId\": \"52a442a2-31e9-42f9-8e3e-4b27dbf82673\",\r\n      \"displayName\": \"Core-ES-WM-Ext\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/979523fb-a19c-4bb0-a8ee-cef29597b0a4\",\r\n      \"subscriptionId\": \"979523fb-a19c-4bb0-a8ee-cef29597b0a4\",\r\n      \"displayName\": \"vsclk-core-prod\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/bd62906c-0a81-43c3-a2f8-126e4cf66ada\",\r\n      \"subscriptionId\": \"bd62906c-0a81-43c3-a2f8-126e4cf66ada\",\r\n      \"displayName\": \"DevDiv Key Vault\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/e544dad6-b9b3-4eea-84ad-d13341c5b6d9\",\r\n      \"subscriptionId\": \"e544dad6-b9b3-4eea-84ad-d13341c5b6d9\",\r\n      \"displayName\": \"VSTS-DTLRM-Eng\",\r\n      \"state\": \"Enabled\",\r\n      \"subscriptionPolicies\": {\r\n        \"locationPlacementId\": \"Internal_2014-09-01\",\r\n        \"quotaId\": \"Internal_2014-09-01\",\r\n        \"spendingLimit\": \"Off\"\r\n      },\r\n      \"authorizationSource\": \"RoleBased\"\r\n    }\r\n  ]\r\n}";
+
+GHE app details:
+client id - 59f87f4321f36d486d8d
+Secret - b21a0047434d0573674c009747e58f4843f35f1c
+
+Client id - fc732737fdd45afce0a4, 2bf6b530bb820f30d6b0
+Secret - 7bd812d2f50accdfb8df5cfc21ddff2a192dc84c, 585a6caee2141c5dde4e1cdda9aaaf989e02216c
+
+
+Go to MyAccess and request for allowing JIT access requests(valid till 90 days) - request access for
+VSTS Team - 15737 (Group to allow JIT access requests to be sent to VSTS Approvers group)
+    3. Go to css tool and navigate to Account(microsoft or skypr or which ever account you are interested in)
+    4. Select one of the above accounts. Eg(skype) and make a note of TFS Scale Unit
+    5. This is not the actual SU name. Search for it on mseng (tfsprodweu4 ext:defaults), you get actual name tfs-weu-4
+    6. Go to vsomc and
+        a. Service: TFS
+        b. Scale Unit: tfs-weu-4, c:select database request access
+		
+		
+C:\Windows\System32\inetsrv\appcmd.exe list wp
+{"This deployment is not properly configured with a registered GitHub account for secret key GitHubLaunchPrivateKeyPrimary.TF400864: The Item specified by the key 'GitHubLaunchPrivateKeyPrimary' does not exist."}
+
+application/vnd.github.machine-man-preview+json
+
+SPN created for mlw workspace:
+f588cd2b-5778-47e8-ad13-abdcea03382f
+S?:caoF6OwDG8@4wVRFGwH:7lLLjNRS?
+
+For Artifact Service in YAML Pipelines in Dev Fabric :
+In both the below files set UseStorageEmulator to true, i.e.:
+UseStorageEmulator=true 	
+code BlobStore\Service\PowerShell\Settings\BlobStore.DevFabric.defaults
+	code ArtifactServices\Service\PowerShell\Settings\Artifact.DevFabric.defaults	
+build those paths
+	vssdf sps gallery ems tfs blobstore artifact
+	
+az ad sp create-for-rbac --name "myActionsApp" --role contributor --scopes /subscriptions/439f6f90-fc63-4d40-8a25-33cdf46c730c/resourceGroups/tut --sdk-auth
+
+{
+  "clientId": "79b2ca71-a901-48c5-8dea-385d43407dee",
+  "clientSecret": "6a895336-a4ba-46e2-8fff-fe08588a45c2",
+  "subscriptionId": "439f6f90-fc63-4d40-8a25-33cdf46c730c",
+  "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
+
+Copy and Paste below values for Service Connection
+***************************************************************************
+Connection Name: (SPN)
+Environment: AzureCloud
+Scope Level: Subscription
+Subscription Id: 439f6f90-fc63-4d40-8a25-33cdf46c730c
+Subscription Name:
+Service Principal Id: 59f09ab8-78cf-47c1-9968-d1656d5c36a1
+Service Principal key: j7UMN4(1F^eH6Zz3@F=wWX(|Wip|N$BT|oV=fqEf
+Tenant Id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+***************************************************************************
+
+SPN for Portal Extentions
+Copy and Paste below values for Service Connection
+***************************************************************************
+Connection Name: (SPN)
+Subscription Id: 439f6f90-fc63-4d40-8a25-33cdf46c730c
+Subscription Name:
+Service Principal Id: b895ab78-5008-43e2-80b7-4300406a00fd
+Service Principal key: 6a895336-a4ba-46e2-8fff-fe08588a45c2
+Tenant Id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+***************************************************************************
+
+Go to Gallery LR, cd Gallery\Devfabric, Verify-Publishers, Enter publisher name
+https://extmgmt.codedev.ms/rogoyal/_apis/extensionmanagement/installedextensions?api-version=5.1-preview.1
+
+dotnet githubrelay.dll -Id romil-dpc
+dotnet pack --configuration Release
+dotnet nuget push "bin/Release/OctocatApp.3.0.11.nupkg" --source "github"
+
+dotnet pack --configuration Release && dotnet nuget push "bin/Release/OctocatApp.2.1.32.nupkg" --source "github"
+
+https://githubrelay.azurewebsites.net/api/GithubRelay?id=romil-dpc&originalCallback=https%3A%2F%2Fcodedev.ms%2Frogoyal%2F_apis%2Fpublic%2Fdistributedtask%2Fwebhooks%2F2e67b9a2-755c-43a4-868e-267ad2638c85%3Fapi-version%3D6.0-preview
+	
+	
+https://codedev.ms/rogoyal/_apis/distributedTask/tasks/9fac244b-8d7c-4d8e-a003-2097daa3270f
+
+trigger: none
+ 
+resources:
+  packages:
+   - package: nugetPackage
+     type: Nuget
+     connection: gh-rg
+     name: nugetTest/OctocatApp
+     version: 2.1.10
+     trigger: true
+     
+stages:
+ - stage: ConsumeArtifact
+   jobs:
+     - job: job1
+       pool: 
+        name: Default
+       steps:
+        - getPackage: nugetPackage
+		
+stages:
+- stage: Production
+  displayName: Production 
+  jobs: 
+  - deployment: Deployment
+    displayName: Deploy
+    pool: 
+      name: default
+    environment: ashkirEnv
+    strategy:
+      runOnce:
+        deploy:
+          steps: 
+          - getPackage: nugetPackage
+          - script: echo Hello, world!
+            displayName: 'Run a one-line script'
+			
+			
+https://dev.azure.com/mseng/AzureDevOps/_git/AzureDevOps/commit/ec1c3515d9fc3a4087a2829aff885c061f1eac33?refName=refs%2Fheads%2Fmaster&path=%2FDistributedTask%2FClient%2FWebApi%2FWebApi%2FEnvironment%2FDeploymentPhaseProvider%2FDeploymentStrategy%2FDeploymentStrategyTaskSteps.cs
+
+c:\lr\tfs\lightrail.exe -NonInteractive -Initial tfs\devfabric -Command "& { Set-FeatureFlag -FeatureName VisualStudio.Services.Commerce.DevopsProjectsResourceGroupValidation -state off }" && c:\lr\portalextension\lightrail.exe -NonInteractive -Initial portalextension\devfabric -Command "& { Set-ServiceRegistryValue -RegistryPath '/TestConstants/IbizaCD/TestMode' -Value 1; Set-ServiceRegistryValue -RegistryPath '/TestConstants/IbizaCD/AzureSPNClientId' b895ab78-5008-43e2-80b7-4300406a00fd; Set-ServiceRegistryValue -RegistryPath '/TestConstants/IbizaCD/AzureSPNClientKey'  6a895336-a4ba-46e2-8fff-fe08588a45c2; Set-ServiceRegistryValue -RegistryPath '/TestConstants/IbizaCD/TenantId' 72f988bf-86f1-41af-91ab-2d7cd011db47; }"
